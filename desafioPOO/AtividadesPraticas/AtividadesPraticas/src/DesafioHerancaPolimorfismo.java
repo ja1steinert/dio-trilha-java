@@ -19,12 +19,13 @@ public class DesafioHerancaPolimorfismo {
     }
 }
 
-class ContaBancaria {
+
+class ContaBancariaDesafio {
     protected int numero;
     protected String titular;
     protected double saldo;
 
-    public ContaBancaria(int numero, String titular, double saldo) {
+    public ContaBancariaDesafio(int numero, String titular, double saldo) {
         this.numero = numero;
         this.titular = titular;
         this.saldo = saldo;
@@ -38,15 +39,16 @@ class ContaBancaria {
     }
 }
 
-class ContaPoupanca extends ContaBancaria {
+class ContaPoupanca extends ContaBancariaDesafio {
     private double taxaJuros;
 
     public ContaPoupanca(int numero, String titular, double saldo, double taxaJuros) {
-        //TODO: Implementar adequadamente esta sobrecarga de construtores.
+        super(numero, titular, saldo);
+        this.taxaJuros = taxaJuros;
     }
 
     public void exibirInformacoes() {
         super.exibirInformacoes();
-        //TODO: Complementar as informações com a taxa de juros.
+        System.out.println("Taxa de juros: " + taxaJuros + "%");
     }
 }
